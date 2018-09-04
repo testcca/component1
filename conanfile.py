@@ -4,7 +4,7 @@ class Package(ConanFile):
     name = "Component1"
     version = "master"
     license = "<Put the package license here>"
-    url = "<Package recipe repository url here, for issues about the package>"
+    url = "https://github.com/testcca/Component1.git"
     description = "<Description of Project here>"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
@@ -25,5 +25,5 @@ class Package(ConanFile):
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["component1"]
+        self.cpp_info.libs = [ self.name ]
 
